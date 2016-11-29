@@ -12,7 +12,7 @@
     var loadScript = function(src) {
         var el = context.document.createElement('script');
         el.setAttribute('src', src);
-        context.document.appendChild(el);
+        context.document.body.appendChild(el);
         return el;
     };
     
