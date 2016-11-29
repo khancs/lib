@@ -5,7 +5,7 @@
 
 (function(context) {
     var ka = {
-        _root: "khancs.github.io/lib/"
+        _root: "https://khancs.github.io/lib/"
     };
     context.ka = ka;
 
