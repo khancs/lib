@@ -26,7 +26,7 @@
          * @return           An object with basic information about the library\
          */
         var getInfo = function(libraryID) {
-            return ka.libaries[libraryID];
+            return ka.libraries[libraryID];
         };
 
         /**
