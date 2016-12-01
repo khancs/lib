@@ -1,11 +1,11 @@
 /*
-  lib/load.js 
+  load.js 
   Originally created on 11/29/16 by KhanCS (https://github.com/khancs).
 */
 
 (function(context) {
     var ka = {
-        _root: "https://khancs.github.io/lib/"
+        _root: "https://cdn.rawgit.com/khancs/lib/v0.0.1/"
     };
     context.ka = ka;
 
