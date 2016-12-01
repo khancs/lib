@@ -5,8 +5,9 @@
 
 (function(context) {
     var ka = {
-        _root: "https://cdn.rawgit.com/khancs/lib/v0.0.1/"
+        _version: "v0.0.1"
     };
+    ka._root = "https://cdn.rawgit.com/khancs/lib/" + ka._version + "/";
     context.ka = ka;
 
     var loadScript = function(src) {
