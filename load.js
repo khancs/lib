@@ -44,9 +44,16 @@
             loadScript(ka._libRoot + lib.src);
         };
 
+        /**
+         * Loads a JavaScript file based on a src parameter
+         * @param src  The src attribute of the JS file to load
+         */
+        ka.loadScript = loadScript;
+
         for (var i = 0; i < loadListeners.length; i++) {
             loadListeners[i](ka);
         }
+        loadListeners = null;
     });
 
     /**
@@ -54,6 +61,11 @@
      * @param listener  The function to call when the library-loading interface is ready. Called with `ka` as a parameter
      */
     ka.ready = function(listener) {
-        loadListeners.push(listener);
+        if (loadListeners !== null) {
+          loadListeners.push(listener);
+        }
+        else {
+          listener(ka);
+        }
     };
 })(this);
