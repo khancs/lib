@@ -8,7 +8,7 @@
         context.ka = {};
     }
     var ka = context.ka;
-    ka._libRoot = "https://cdn.rawgit.com/khancs/lib/v0.0.1/lib/";
+    ka._libRoot = "https://cdn.rawgit.com/khancs/lib/" + ka._version + "/lib/";
     ka.libraries = {
         "pjs": {
             name: "Khan Academy Processing.js",
