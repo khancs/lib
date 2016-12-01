@@ -4,8 +4,9 @@
 */
 
 (function(context) {
+    var loadListeners = []; // Functions to call once the library loader is loaded
     var ka = {
-        _version: "v0.0.1"
+        _version: "v0.0.1.1"
     };
     ka._root = "https://cdn.rawgit.com/khancs/lib/" + ka._version + "/";
     context.ka = ka;
@@ -42,5 +43,17 @@
             }
             loadScript(ka._libRoot + lib.src);
         };
+
+        for (var i = 0; i < loadListeners.length; i++) {
+            loadListeners[i](ka);
+        }
     });
+
+    /**
+     * Adds a listener to call when the library-loading interface is ready
+     * @param listener  The function to call when the library-loading interface is ready. Called with `ka` as a parameter
+     */
+    ka.ready = function(listener) {
+        loadListeners.push(listener);
+    };
 })(this);
