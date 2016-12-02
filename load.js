@@ -34,14 +34,20 @@
         /**
          * Loads a library from the Khan Academy database of libraries
          * @param libraryID  The ID of the library to load
+         * @param callback   The function to be called when the library is loaded. Called with the new library as a parameter.
          * @throws           An error if the library cannot be found
          */
-        ka.load = function(libraryID) {
+        ka.load = function(libraryID, callback) {
             var lib = getInfo(libraryID);
             if (typeof lib === 'undefined' || typeof lib.src === 'undefined') {
                 throw 'KALib/load.js: No library with ID "' + libraryID + '" exists.';
             }
-            loadScript(ka._libRoot + lib.src);
+            if (typeof callback !== 'function') {
+                throw 'KALib/load.js: Invalid callback specified for library with ID "' + libraryID + '".';
+            }
+            loadScript(ka._libRoot + lib.src)._ka_loaded = function(result) {
+                callback(result);
+            }
         };
 
         /**
