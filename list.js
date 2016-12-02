@@ -10,10 +10,15 @@
     var ka = context.ka;
     ka._libRoot = "https://cdn.rawgit.com/khancs/lib/" + ka._version + "/lib/";
     ka.libraries = {
-        "pjs": {
+        "pjs/gui": {
+            name: "Processing.js GUI Creator",
+            desc: "A library to allow simple production of GUIs in the Khan Academy Processing.js environment",
+            src:  "khancs/pjs-gui.js"
+        },
+        "webpage/pjs": {
             name: "Khan Academy Processing.js",
             desc: "A library to produce environments to emulate the Khan Academy Processing.js environment",
-            src: "khancs/pjs.js"
+            src:  "khancs/webpage-pjs.js"
         }
     };
 })(this);
