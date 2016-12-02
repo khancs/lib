@@ -6,7 +6,7 @@
 (function(context) {
     var loadListeners = []; // Functions to call once the library loader is loaded
     var ka = {
-        _version: "v0.0.1.1"
+        _version: "v0.0.1.4"
     };
     ka._root = "https://cdn.rawgit.com/khancs/lib/" + ka._version + "/";
     context.ka = ka;
